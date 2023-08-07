@@ -1,1 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,500;0,800;1,300;1,500;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@0,300;1,300;0,500;1,500;0,800;1,800&display=swap');
+
+.g2 {
+  font-family: 'Rubik', sans-serif;
+  color: aqua;
+}
