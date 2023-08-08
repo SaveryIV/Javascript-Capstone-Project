@@ -1,6 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@0,300;1,300;0,500;1,500;0,800;1,800&display=swap');
 
-.g2 {
+body {
+  margin: 0;
+}
+
+* {
   font-family: 'Rubik', sans-serif;
-  color: aqua;
+}
+
+.header {
+  height: 15vh;
+  background-color: silver;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-container {
+  display: flex;
+  margin-left: 5vw;
+}
+
+.pokeball-container {
+  width: 50px;
+  height: 50px;
+}
+
+.pokeball-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.pokedex-container {
+  width: 125px;
+  height: 50px;
+}
+
+.pokedex {
+  width: 100%;
+  height: 100%;
+}
+
+.list-links {
+  margin-right: 5vw;
+}
+
+.list-links a {
+  text-decoration: none;
+  margin-left: 15px;
+  color: black;
 }
