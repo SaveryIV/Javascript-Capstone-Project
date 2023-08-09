@@ -4,8 +4,7 @@ import pokedex from './assets/Pokédex_logo.png';
 import { fetchPokemons } from '../modules/pokemon.js';
 
 const $header = document.querySelector('.header');
-
-//
+const $footer = document.querySelector('.footer');
 $header.innerHTML = `
     <div class="img-container">
         <div class="pokeball-container">
@@ -23,3 +22,14 @@ $header.innerHTML = `
 `;
 
 fetchPokemons(25);
+
+$footer.innerHTML = `
+    <div class="footer-block">
+        <div class="logo">
+            <img src=${pokedex} alt="Pokedex Logo"/>
+        </div>
+        <div class="rights">
+            <h3>Created by Microverse under CC license</h3>
+        </div>
+    </div>
+`;
