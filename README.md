@@ -73,23 +73,24 @@ In order to run this project you need:
 
 Example commands:
 
-sh
+```sh
   git https://github.com/SaveryIV/Javascript-Capstone-Project.git
   cd Javascript-Capstone-Project
+```
 
 ### Install
 
 - Run:
-sh
+```sh
 npm install
-
+```
 
 ### Usage
 
 - In order to run this project, clone this repository to your PC and open a terminal, then use:
-sh
+```sh
 npm start
-
+```
 
 ### Run tests
 
@@ -97,21 +98,21 @@ If you are facing linter errors, use:
 
 - For Hintrc:
 
-
+```
 npx hint .
-
+```
 
 - For Stylelint:
 
-
+```
 npx stylelint "**/*.{css}"
-
+```
 
 - For ESlint:
 
-
+```
 npx eslint .
-
+```
 
 ### Deployment
 
@@ -125,7 +126,7 @@ npx eslint .
 👤 *Agustin Soria*
 
 - GitHub: [@Agustin-Soria](https://github.com/SaveryIV)
-- LinkedIn: [Agustin Soria](https://www.linkedin.com/)
+- LinkedIn: [Agustin Soria](https://www.linkedin.com/in/agust%C3%ADn-ricardo-soria-meza-979747228/)
 
 👤 *Uzair Manzoor*
 
