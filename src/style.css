@@ -115,3 +115,25 @@ body {
   margin-top: 10px;
   font-size: 12px;
 }
+
+.like-img {
+  width: 100%;
+  height: 50%;
+  margin-right: 5px;
+}
+
+.button-like {
+  display: flex;
+  align-items: center;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 50px;
+}
+
+.buttons-container button {
+  height: 50px;
+}

@@ -2,6 +2,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable import/prefer-default-export */
 import '../src/style.css';
+import like from '../src/assets/like.png';
 
 const $list = document.querySelector('.pokemon-list');
 const url = 'https://pokeapi.co/api/v2/pokemon/';
@@ -25,6 +26,10 @@ export const displayList = (array) => {
             <p class="name">${name}</p>
             <p class="types">${types.map((type) => type.type.name).join(', ')}</p>
             <p class="id">#${id}</p>
+            <div class="buttons-container">
+                <button class="button-comments">Comments</button>
+                <button class="button-like"><img class="like-img" src="${like}" alt="like">Like!</button>
+            </div>
         </div>
       `;
   });
