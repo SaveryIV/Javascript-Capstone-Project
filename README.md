@@ -77,7 +77,6 @@ sh
   git https://github.com/SaveryIV/Javascript-Capstone-Project.git
   cd Javascript-Capstone-Project
 
-
 ### Install
 
 - Run:
