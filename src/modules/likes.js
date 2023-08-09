@@ -11,10 +11,6 @@ export const addLike = async (id) => {
     }),
   });
 };
-
 export const catchLike = async () => {
-  const response = await fetch(likesURL);
-  const resultJSON = await response.json();
-  const resultMessage = resultJSON;
-  console.log(resultMessage);
+  await fetch(likesURL);
 };
