@@ -1,8 +1,10 @@
+/* eslint-disable no-await-in-loop */
 /* eslint-disable object-curly-newline */
 /* eslint-disable no-plusplus */
 /* eslint-disable import/prefer-default-export */
 import '../src/style.css';
 import like from '../src/assets/like.png';
+import { addLike, catchLike } from './likes.js';
 
 const $list = document.querySelector('.pokemon-list');
 const url = 'https://pokeapi.co/api/v2/pokemon/';
@@ -28,16 +30,22 @@ export const displayList = (array) => {
             <p class="id">#${id}</p>
             <div class="buttons-container">
                 <button class="button-comments">Comments</button>
-                <button class="button-like"><img class="like-img" src="${like}" alt="like">Like!</button>
+                <button class="button-like" name="${name}"><p name="${name}" class="counter-likes"></p><img class="like-img" src="${like}" alt="like">Like!</button>
             </div>
         </div>
       `;
+  });
+  const $likeBtn = document.querySelectorAll('.button-like');
+  $likeBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      addLike(btn.name);
+    });
+    catchLike();
   });
 };
 
 export const fetchPokemons = async (number) => {
   for (let i = 1; i <= number; i++) {
-    // eslint-disable-next-line no-await-in-loop
     await fetchPokemon(i);
   }
   array.sort((a, b) => a.value - b.value);

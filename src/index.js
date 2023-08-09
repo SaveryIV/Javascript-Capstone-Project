@@ -5,6 +5,7 @@ import { fetchPokemons } from '../modules/pokemon.js';
 
 const $header = document.querySelector('.header');
 const $footer = document.querySelector('.footer');
+
 $header.innerHTML = `
     <div class="img-container">
         <div class="pokeball-container">
