@@ -4,7 +4,8 @@
 /* eslint-disable import/prefer-default-export */
 import '../style.css';
 import like from '../assets/like.png';
-import { addLike, catchLike } from './apis/likes.js';
+import { addLike, catchLike } from './likes.js';
+import { inventoryAPI } from './api.js';
 
 const $list = document.querySelector('.pokemon-list');
 const url = 'https://pokeapi.co/api/v2/pokemon/';
