@@ -1,10 +1,10 @@
 import './style.css';
 import pokeball from './assets/pokeball.png';
 import pokedex from './assets/Pokédex_logo.png';
+import { fetchPokemons } from '../modules/pokemon.js';
 
 const $header = document.querySelector('.header');
 const $footer = document.querySelector('.footer');
-//
 $header.innerHTML = `
     <div class="img-container">
         <div class="pokeball-container">
@@ -20,6 +20,8 @@ $header.innerHTML = `
         <a href="" id="Contact-category">Contact</a>
     </nav>
 `;
+
+fetchPokemons(25);
 
 $footer.innerHTML = `
     <div class="footer-block">
