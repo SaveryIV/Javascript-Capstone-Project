@@ -1,7 +1,7 @@
 import './style.css';
 import pokeball from './assets/pokeball.png';
 import pokedex from './assets/Pokédex_logo.png';
-import { fetchPokemons } from '../modules/pokemon.js';
+import { fetchPokemons } from './modules/pokemon.js';
 
 const $header = document.querySelector('.header');
 const $footer = document.querySelector('.footer');
