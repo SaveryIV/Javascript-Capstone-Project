@@ -1,7 +1,7 @@
 import './style.css';
 import pokeball from './assets/pokeball.png';
 import pokedex from './assets/Pokédex_logo.png';
-import { displayList, getPokemons } from '../modules/pokemon.js';
+import { fetchPokemons } from '../modules/pokemon.js';
 
 const $header = document.querySelector('.header');
 
@@ -21,21 +21,5 @@ $header.innerHTML = `
         <a href="" id="Contact-category">Contact</a>
     </nav>
 `;
-const promises = [];
 
-for (let i = 0; i <= 25; i++) {
-  promises.push(getPokemons(i));
-}
-
-const lastPromise = promises[promises.length - 1];
-
-lastPromise
-  .then((lastResult) => {
-    // Aquí tendrás el resultado de la última promesa
-    console.log(lastResult);
-    // Ahora puedes usar displayList para mostrar los resultados
-    displayList(lastResult);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+fetchPokemons(25);
