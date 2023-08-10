@@ -22,7 +22,7 @@ $header.innerHTML = `
     </nav>
 `;
 
-fetchPokemons(25);
+fetchPokemons(50);
 
 $footer.innerHTML = `
     <div class="footer-block">

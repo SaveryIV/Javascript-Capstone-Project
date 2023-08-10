@@ -36,11 +36,15 @@ export const displayList = (array) => {
       `;
   });
   const $likeBtn = document.querySelectorAll('.button-like');
-  $likeBtn.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      addLike(btn.name);
+  const $likeCounter = document.querySelectorAll('.counter-likes');
+
+  $likeBtn.forEach(async (btn) => {
+    btn.addEventListener('click', async () => {
+      await addLike(btn.name);
+      $likeCounter.forEach(async (counter) => {
+        await catchLike(counter.name);
+      });
     });
-    catchLike();
   });
 };
 

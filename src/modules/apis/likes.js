@@ -1,4 +1,4 @@
-const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/TpSQYZhyRfL6B96XWZQ9/likes/';
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/3V6KQXimBFmwwKE1A3A0/likes/';
 
 export const addLike = async (id) => {
   await fetch(url, {
@@ -12,9 +12,13 @@ export const addLike = async (id) => {
   });
 };
 
-export const catchLike = async () => {
+export const catchLike = async (name) => {
   const response = await fetch(url);
-  const resultJSON = await response.json();
-  const resultMessage = resultJSON;
-  console.log(resultMessage);
+  const resultArray = await response.json();
+  /* onsole.log(name); */
+  const foundItem = await resultArray.find((item) => item.item_id === name);
+  if (foundItem) {
+    return foundItem.likes;
+  }
+  return 0;
 };
