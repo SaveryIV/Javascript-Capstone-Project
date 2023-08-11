@@ -2,7 +2,6 @@ import './style.css';
 import pokeball from './assets/pokeball.png';
 import pokedex from './assets/Pokédex_logo.png';
 import { fetchPokemons } from './modules/pokemon.js';
-import { getComment, addComment } from './modules/comment.js';
 
 const $header = document.querySelector('.header');
 const $footer = document.querySelector('.footer');
@@ -36,38 +35,19 @@ $footer.innerHTML = `
     </div>
 `;
 
-const newComment = document.querySelector('#add-comment');
-const commentForm = document.querySelector('.comment-section');
-const test = document.querySelector('.test');
 const popup = document.querySelector('#popup');
 const closeBtn = document.querySelector('#close-btn');
-const list = document.querySelector('#comment-list');
 
-const displayComment = async () => {
-  const commentList = await getComment('item2');
-  commentList.forEach((item) => {
-    list.innerHTML += `<li> ${item.username}: ${item.comment} (${item.creation_date})`;
+const displayBtnComent = async () => {
+  const btnComments = document.querySelectorAll('.button-comments');
+  await btnComments.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      popup.classList.remove('overlay');
+    });
   });
 };
 
-test.addEventListener('click', () => {
-  popup.classList.remove('overlay');
-});
-
+displayBtnComent();
 closeBtn.addEventListener('click', () => {
   popup.classList.add('overlay');
 });
-
-newComment.addEventListener('click', (e) => {
-  const commentor = document.querySelector('#username').value;
-  const comment = document.querySelector('#comment').value;
-  if (!commentor || !comment) {
-    e.preventDefault();
-  } else {
-    addComment('item2', commentor, comment);
-    getComment('item2');
-    commentForm.reset();
-  }
-});
-
-document.addEventListener(displayComment());

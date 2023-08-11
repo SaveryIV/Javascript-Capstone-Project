@@ -5,6 +5,7 @@
 import '../style.css';
 import like from '../assets/like.png';
 import { addLike, catchLike } from './likes.js';
+import { displayComment, addComment, getComment } from './comment.js';
 
 const $list = document.querySelector('.pokemon-list');
 const url = 'https://pokeapi.co/api/v2/pokemon/';
@@ -29,7 +30,7 @@ export const displayList = (array) => {
             <p class="types">${types.map((type) => type.type.name).join(', ')}</p>
             <p class="id">#${id}</p>
             <div class="buttons-container">
-                <button class="button-comments">Comments</button>
+                <button class="button-comments" name="${name}" sprite="${sprites.front_default}">Comments</button>
                 <button class="button-like" name="${name}"><p name="${name}" class="counter-likes">0</p><img class="like-img" src="${like}" alt="like">Like!</button>
             </div>
         </div>
@@ -62,6 +63,37 @@ export const displayList = (array) => {
         $ele.textContent = result === 0 ? '0' : result;
       }
     });
+  });
+
+  const popup = document.querySelector('#popup');
+  const btnComments = document.querySelectorAll('.button-comments');
+  const comentNamePoke = document.querySelector('.comment-name-poke');
+  const imgPopup = document.querySelector('.img-popup');
+  let takeName = '';
+  btnComments.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      takeName = btn.getAttribute('name');
+      displayComment(btn.getAttribute('name'));
+      comentNamePoke.innerHTML = btn.getAttribute('name');
+      imgPopup.src = btn.getAttribute('sprite');
+      popup.classList.remove('overlay');
+    });
+  });
+
+  const newComment = document.querySelector('#add-comment');
+  const commentForm = document.querySelector('.comment-section');
+
+  newComment.addEventListener('click', (e) => {
+    const commentor = document.querySelector('#username').value;
+    const comment = document.querySelector('#comment').value;
+    if (!commentor || !comment) {
+      e.preventDefault();
+    } else {
+      /* console.log(takeName); */
+      addComment(takeName, commentor, comment);
+      getComment(takeName);
+      commentForm.reset();
+    }
   });
 };
 

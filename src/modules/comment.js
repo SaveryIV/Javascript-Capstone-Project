@@ -1,15 +1,18 @@
 import { inventoryAPI } from './api.js';
 
-const commentURL = `${inventoryAPI}comments?item_id=`;
+const commentURLpost = `${inventoryAPI}comments`;
+const commentURLget = `${inventoryAPI}comments?item_id=`;
+const list = document.querySelector('#comment-list');
 
 const getComment = async (id) => {
-  const res = await fetch(commentURL + id);
+  const res = await fetch(commentURLget + id);
   const data = await res.json();
+  /* console.log(data); */
   return data;
 };
 
 const addComment = async (id, user, desc) => {
-  const res = await fetch(commentURL + id, {
+  const res = await fetch(commentURLpost, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
@@ -21,4 +24,14 @@ const addComment = async (id, user, desc) => {
   return data;
 };
 
-export { getComment, addComment };
+const displayComment = async (id) => {
+  const commentList = await getComment(id);
+  console.log(commentList);
+  if (commentList.error.message !== "'item_id' not found.") {
+    commentList.forEach((item) => {
+      list.innerHTML += `<li> ${item.username}: ${item.comment} (${item.creation_date})`;
+    });
+  }
+};
+
+export { getComment, addComment, displayComment };
