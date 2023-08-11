@@ -137,3 +137,46 @@ body {
 .buttons-container button {
   height: 50px;
 }
+
+/* Comment Pop-up */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  transform: scale(0);
+  transition: all 0.6s ease-in-out;
+  backdrop-filter: blur(6px);
+}
+
+.comment-card {
+  position: fixed;
+  display: flex;
+  width: 420px;
+  max-width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  padding: 1em;
+  flex-direction: column;
+  background: #fff0f0;
+  border: 2px solid black;
+  border-radius: 8px;
+  margin: 3em;
+  z-index: 10;
+  transition: all 0.6s ease-in-out;
+}
+
+.comment-section > * {
+  margin-bottom: 20px;
+}
+
+#comment-list {
+  flex-wrap: wrap;
+}
+
+#comment-list li {
+  margin-bottom: 5px;
+}
