@@ -1,4 +1,4 @@
-const inventoryAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/fWAJPqcXqO3QM9dV6LYn/';
+const inventoryAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/WtRU0pkCN8fwvlF713ba/';
 const likesURL = `${inventoryAPI}likes/`;
 
 export { inventoryAPI, likesURL };
