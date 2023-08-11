@@ -26,7 +26,7 @@ const addComment = async (id, user, desc) => {
 
 const displayComment = async (id) => {
   const commentList = await getComment(id);
-  console.log(commentList);
+  /* console.log(commentList); */
   if (commentList.error.message !== "'item_id' not found.") {
     commentList.forEach((item) => {
       list.innerHTML += `<li> ${item.username}: ${item.comment} (${item.creation_date})`;
