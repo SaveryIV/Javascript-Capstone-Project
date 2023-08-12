@@ -8,7 +8,7 @@ import { addLike, catchLike } from './likes.js';
 
 const $list = document.querySelector('.pokemon-list');
 const url = 'https://pokeapi.co/api/v2/pokemon/';
-const array = [];
+export const array = [];
 
 const fetchPokemon = async (id) => {
   await fetch(url + id)

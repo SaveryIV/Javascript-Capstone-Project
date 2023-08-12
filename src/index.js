@@ -5,6 +5,7 @@ import { fetchPokemons } from './modules/pokemon.js';
 
 const $header = document.querySelector('.header');
 const $footer = document.querySelector('.footer');
+const quantity = 25;
 
 $header.innerHTML = `
     <div class="img-container">
@@ -16,13 +17,13 @@ $header.innerHTML = `
         </div>
     </div>
     <nav class="list-links">
-        <a href="" id="Pokemons-category">Pokemons(25)</a>
+        <a href="" id="Pokemons-category">Pokemons(${quantity})</a>
         <a href="" id="About-category">About</a>
         <a href="" id="Contact-category">Contact</a>
     </nav>
 `;
 
-fetchPokemons(25);
+fetchPokemons(quantity);
 
 $footer.innerHTML = `
     <div class="footer-block">

@@ -117,25 +117,27 @@ body {
 }
 
 .like-img {
-  width: 100%;
-  height: 50%;
-  margin-right: 5px;
+  width: 30%;
 }
 
 .button-like {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .buttons-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   width: 80%;
-  margin-top: 50px;
+  margin-top: 20px;
+  align-items: center;
+  gap: 20px;
 }
 
 .buttons-container button {
-  height: 50px;
+  width: 50%;
+  height: 40%;
 }
 
 /* Comment Pop-up */
