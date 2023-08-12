@@ -25,11 +25,10 @@ export const displayList = (array) => {
     $list.innerHTML += `
         <div class="card">
             <div class="container-sprite"><img src="${sprites.front_default}" alt="${name}"></div>
-            <p class="name">${name}</p>
+            <p class="name">${name} #${id}</p>
             <p class="types">${types.map((type) => type.type.name).join(', ')}</p>
-            <p class="id">#${id}</p>
             <div class="buttons-container">
-                <button class="button-comments">Comments</button>
+                <button class="button-comments" name="${name}" sprite="${sprites.front_default}">Comments</button>
                 <button class="button-like" name="${name}"><p name="${name}" class="counter-likes">0</p><img class="like-img" src="${like}" alt="like">Like!</button>
             </div>
         </div>
@@ -54,7 +53,7 @@ export const displayList = (array) => {
   $likeBtn.forEach(async (btn) => {
     btn.addEventListener('click', async (e) => {
       const $ele = e.target.querySelector('.counter-likes');
-      const btnName = btn.name; // Almacena el nombre del botón
+      const btnName = btn.name;
       await addLike(btnName);
       const result = await catchLike(btnName);
       // console.log(result);
