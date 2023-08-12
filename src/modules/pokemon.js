@@ -57,7 +57,7 @@ export const displayList = (array) => {
       const btnName = btn.name; // Almacena el nombre del botón
       await addLike(btnName);
       const result = await catchLike(btnName);
-      console.log(result);
+      // console.log(result);
       if ($ele) {
         $ele.textContent = result === 0 ? '0' : result;
       }
