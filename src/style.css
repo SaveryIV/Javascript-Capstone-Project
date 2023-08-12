@@ -60,7 +60,7 @@ body {
 
 .card {
   background-color: #f0f0f0;
-  padding: 20px;
+  margin: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -120,10 +120,19 @@ body {
   width: 30%;
 }
 
+.like-container {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .button-like {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  height: 2rem;
+  width: 5rem;
 }
 
 .buttons-container {
@@ -133,11 +142,6 @@ body {
   margin-top: 20px;
   align-items: center;
   gap: 20px;
-}
-
-.buttons-container button {
-  width: 50%;
-  height: 40%;
 }
 
 /* Comment Pop-up */
