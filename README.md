@@ -52,7 +52,7 @@ Currently, this website only follows a small wireframe with no real functionalit
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-There's, currently, no live demo for this project!
+https://saveryiv.github.io/Javascript-Capstone-Project/dist/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
