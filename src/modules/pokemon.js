@@ -29,7 +29,7 @@ export const displayList = (array) => {
             <p class="types">${types.map((type) => type.type.name).join(', ')}</p>
             <p class="id">#${id}</p>
             <div class="buttons-container">
-                <button class="button-comments">Comments</button>
+                <button class="comment-btn">Comments</button>
                 <button class="button-like" name="${name}"><p name="${name}" class="counter-likes">0</p><img class="like-img" src="${like}" alt="like">Like!</button>
             </div>
         </div>
