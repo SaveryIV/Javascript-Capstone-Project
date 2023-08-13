@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open",
-    "build": "webpack"
+    "start": "webpack-dev-server --mode production --open",
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
     "eslint-plugin-import": "^2.28.0",
     "fetch-mock-jest": "^1.5.1",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.0.0",
     "hint": "^7.1.10",
     "html-webpack-plugin": "^5.5.3",
     "jest": "^29.6.2",
