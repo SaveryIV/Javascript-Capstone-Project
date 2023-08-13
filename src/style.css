@@ -257,7 +257,7 @@
   border: solid 2px var(--background-color);
   padding: 5px;
   border-radius: 8px;
-  color: #8df368;
+  color: #296d11;
 }
 
 .Add-comment {
@@ -304,7 +304,7 @@
   font-family: var(--font-title-name);
   font-size: var(--font-comment-size);
   text-decoration: underline;
-  color: #68f3a9;
+  color: #0c6636;
 }
 
 .label2 {
@@ -312,7 +312,7 @@
   font-size: var(--font-comment-size);
   margin-left: 20px;
   margin-top: 20px;
-  color: #ccf368;
+  color: #435711;
   text-decoration: underline;
 }
 
