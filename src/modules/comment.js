@@ -1,5 +1,7 @@
 import { inventoryAPI } from './api.js';
 
+/* API Functions */
+
 const commentURL = `${inventoryAPI}comments?item_id=`;
 
 const getComment = async (id) => {
@@ -21,4 +23,22 @@ const addComment = async (id, user, desc) => {
   return data;
 };
 
-export { getComment, addComment };
+/* Display Functions */
+
+const commentList = document.querySelector('#comment-list');
+const totalComments = document.querySelector('#comment-counter');
+
+const displayComment = async (id) => {
+  const commentData = await getComment(id);
+  commentList.innerHTML = '';
+  if (commentData.error) {
+    totalComments.textContent = 'Comments (0):';
+  } else {
+    totalComments.textContent = `Comments (${commentData.length}):`;
+    commentData.forEach((item) => {
+      commentList.innerHTML += `<li class="comment"> ${item.username}: ${item.comment} (${item.creation_date})`;
+    });
+  }
+};
+
+export { getComment, addComment, displayComment };

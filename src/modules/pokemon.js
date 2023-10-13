@@ -8,7 +8,7 @@ import { addLike, catchLike } from './likes.js';
 
 const $list = document.querySelector('.pokemon-list');
 const url = 'https://pokeapi.co/api/v2/pokemon/';
-export const array = [];
+const array = [];
 
 const fetchPokemon = async (id) => {
   await fetch(url + id)
@@ -25,13 +25,12 @@ export const displayList = (array) => {
     $list.innerHTML += `
         <div class="card">
             <div class="container-sprite"><img src="${sprites.front_default}" alt="${name}"></div>
-            <div class="like-container">
-              <p class="name">${name} #${id}</p><button class="button-like" name="${name}"><p name="${name}" class="counter-likes">0</p><img class="like-img" src="${like}" alt="like">Like!</button>
-            </div>
+            <p class="name">${name}</p>
             <p class="types">${types.map((type) => type.type.name).join(', ')}</p>
+            <p class="id">#${id}</p>
             <div class="buttons-container">
-                <button class="button-comments" name="${name}" sprite="${sprites.front_default}">Comments</button>
-                
+                <button class="comment-btn">Comments</button>
+                <button class="button-like" name="${name}"><p name="${name}" class="counter-likes">0</p><img class="like-img" src="${like}" alt="like">Like!</button>
             </div>
         </div>
       `;
@@ -55,7 +54,7 @@ export const displayList = (array) => {
   $likeBtn.forEach(async (btn) => {
     btn.addEventListener('click', async (e) => {
       const $ele = e.target.querySelector('.counter-likes');
-      const btnName = btn.name;
+      const btnName = btn.name; // Almacena el nombre del botón
       await addLike(btnName);
       const result = await catchLike(btnName);
       // console.log(result);
